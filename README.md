@@ -6,4 +6,4 @@ The site is divided into two parts-
 1.The customer page is where registered customers can check out available menus for each restaurant.
 2.Restaurant page is for  restaurants to upload different menus.
 
-It has online payment sysytem where people can initiate online transactions for their food online.
+It has online payment system where people can initiate online transactions to order for their food online.
