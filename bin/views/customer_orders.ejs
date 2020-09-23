@@ -1,0 +1,124 @@
+<%- include layouts/header.ejs %>
+
+<section class="gallery-container section_padding_bottom section_padding_tp5 border_btm1">
+<form method="post" action="order">
+		<div class="container">
+		<div class="row">
+                <div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <div class="section_title align_middle">
+                        <img src="/../img/components/section_pattern.png" alt="section pattern">
+                        <h2>ORDER</h2>
+                        <p>
+                            Check your order details below<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br> <br> 
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="cart_table_outer_area">
+						<div class="cart_table_inner_area">
+							<ul>
+								<li class="cart_heading">
+									<ul class="middle_row">
+										<li style="width: 13%">
+											
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text">Product</h5>
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text">Price</h5>
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text">Quantity</h5>
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text">Total</h5>
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text">Order Date</h5>
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text">Delivery Date</h5>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<% if(data.length){     
+                     for(var i = 0;i < data.length;i++) { %>
+								<li class="color4">
+									<ul class="middle_row">
+										<li style="width: 13%">
+											<div class="cart_product_image">
+												<img src="/../uploads/<%=data[i].RESTUARANT_MENU_ID%>" alt="cart food">
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text"><%=data[i].MENU_NAME%></h5>
+												<input type="hidden" name="menuname" value="<%=data[i].MENU_NAME%>">
+												<input type="hidden" name="menu" value="<%=data[i].RESTUARANT_MENU_ID%>">
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text"><%=data[i].PRICE%></h5>
+												<input type="hidden" value="<%=data[i].PRICE%>" id="price">
+												<input type="hidden" name="totalprice" value="<%=data[i].PRICE%>" id="totalprice">
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text" id="total"><%=data[i].MENU_QTY%></h5>
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text" id="total"><%=data[i].TOTAL%></h5>
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text" id="total"><%=data[i].ORDERDATE%></h5>
+											</div>
+										</li>
+										<li style="width: 13%">
+											<div class="cart_category_title align_middle">
+												<h5 class="cart_text" id="total"><%= data[i].DELIVERYDATE ? data[i].DELIVERYDATE : 'N/A' %></h5>
+											</div>
+										</li>
+									</ul>
+								</li>
+
+				<% }%>
+			<% }%>
+							</ul>
+						</div>
+					</div>
+				</div>
+		</div>
+		</form>
+	</section>
+	<script type="text/javascript">
+		function calculateTotal(){
+			var price = document.getElementById("price").value;
+			var quantity = document.getElementById("quantity").value;
+			var total = price*quantity;
+			document.getElementById("total").innerHTML = total;
+			document.getElementById("totalprice").value = total;
+		}
+	</script>
+<%- include layouts/footer.ejs %>

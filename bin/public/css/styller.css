@@ -1,0 +1,112 @@
+/*
+Author: Themeebit
+Developed By:Abdus Salam
+
+*/
+.salam_styller {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ffc258;
+    box-shadow: -7px 5px 15px rgba(0, 0, 0, 0.05);
+    padding-left: 20px;
+    padding-right: 20px;
+    position: fixed;
+    right: -297px;
+    top: calc(50% - 230px);
+    -webkit-transition: all .40s linear;
+    transition: all .40s linear;
+    width: 270px;
+    z-index: 999;
+}
+.styller_bottom a{
+  color:#ffc258;
+}
+.inactive.salam_styller {
+  right: -270px;
+}
+.active.salam_styller{
+    right: 0px;
+}
+.styller_top {
+    position: relative;
+}
+.style_controller {
+    background: #ffc258 none repeat scroll 0 0;
+    border: 1px solid #ffc258;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    color: #fff;
+    height: 40px;
+    left: -60px;
+    line-height: 37px;
+    position: absolute;
+    text-align: center;
+    top: 37px;
+    width: 40px;
+    cursor: pointer;
+}
+.styller_middle ul li {
+  display: block;
+  padding-bottom: 21px;
+  padding-right: 23px;
+}
+.style_controller i {
+    font-size: 20px;
+    display: inline-block;
+    animation: urotation 2s linear infinite;
+}
+@keyframes urotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.salam_styller {
+}
+.styller_middle ul li h4 {
+    color: #333;
+    font-family: "PT Sans",sans-serif;
+    font-size: 18px;
+}
+.styller_middle {
+  padding-bottom: 30px;
+  padding-top: 42px;
+  text-align: center;
+}
+.styller_bottom {
+    text-align: center;
+}
+.styller_middle ul li:last-child {
+    padding-right: 0;
+}
+.styller_bottom {
+    font-size: 13px;
+    line-height: 22px;
+    padding-top: 33px;
+}
+.styller_bottom > span {
+    display: block;
+}
+.sp-picker-container {
+  border-left: 1px solid #fff;
+  width: 140px;
+}
+.sp-picker-container, .sp-palette-container {
+  background: #fff none repeat scroll 0 0;
+  float: left;
+  margin-bottom: -290px;
+  padding: 10px 10px 300px;
+  position: relative;
+}
+.sp-replacer {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #91765d;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  overflow: hidden;
+  padding: 4px;
+  vertical-align: middle;
+}

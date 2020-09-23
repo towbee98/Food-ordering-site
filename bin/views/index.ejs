@@ -1,0 +1,57 @@
+<%- include layouts/header.ejs %>
+
+<section class="gallery-container section_padding_bottom section_padding_tp5 border_btm1">
+		<div class="container" style="background: #F8F8F8;padding-top: 30px;padding-bottom: 20px;">
+		<div class="row">
+                <div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <div class="section_title align_middle">
+                        <img src="/../img/components/section_pattern.png" alt="section pattern">
+                        <h2>Menu</h2>
+                        <p>
+                            Browse through our menu from different restaurant<br>
+                        </p>
+                    </div><!--/.section_title-->
+                </div><!--/.col-xs-12-->
+            </div>
+			<div class="row">
+			<% if(data.length){     
+                     for(var i = 0;i < data.length;i++) { %>
+				<div class="col-md-4 col-sm-6">
+					<div class="single_food_item type2">
+						<img src="/../uploads/<%=data[i].RESTUARANT_MENU_ID%>" alt="food_menu_image">
+						<div class="single_food_item_down_content">
+							<div class="single_food_item_content_title">
+								<a href="#">
+									<%=data[i].MENU_NAME%>
+								</a>
+								<span>
+									<%=data[i].INGREDIENTS%>
+								</span>
+							</div>
+							<div class="single_food_item_content_price">
+								<h6>$<%=data[i].PRICE%></h6>
+							</div>
+						</div>
+						<div class="food_menu_hover_content">
+							<ul>
+								<li>
+									<a href="/../uploads/<%=data[i].RESTUARANT_MENU_ID%>" class="restaurent_menu_img vbox-item" data-gall="gall">
+										<i class="icofont icofont-ui-zoom-in"></i>
+									</a>
+								</li>
+								<li>
+									<a href="order?id=<%=data[i].RESTUARANT_MENU_ID%>">
+										<i class="icofont icofont-shopping-cart"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<% }%>
+			<% }%>
+			</div>
+		</div>
+	</section>
+
+<%- include layouts/footer.ejs %>

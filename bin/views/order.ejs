@@ -1,0 +1,265 @@
+<%- include layouts/header.ejs %>
+<script type="text/javascript">
+	function getQuantity(){
+		var tquantity = "";
+		var quantity = document.getElementsByClassName("quantity");
+		var c = 0;
+		while(c < quantity.length){
+			var q = document.getElementsByClassName("quantity")[c].value;
+			if (tquantity = "") {
+				tquantity = q;
+			}else{
+	        	tquantity = tquantity+","+q
+        	}
+        	c++;
+        }
+		document.getElementById("totalquantity").value  = tquantity;
+		calculateTotal();	
+	}
+	function calculateTotal(){
+        var quantity = document.getElementsByClassName("quantity");
+        var price = document.getElementsByClassName("price");
+        var total = 0;
+        var c = 0;
+        while(c < quantity.length){
+        	var q = document.getElementsByClassName("quantity")[c].value;
+        	var p = document.getElementsByClassName("price")[c].value;
+        	total += parseFloat(q)*parseFloat(p);
+        	c++;
+        }
+        if (total < 1) {
+        	alert("Please select a valid quantity");
+        }
+        else{
+        	document.getElementById("totalitem").innerHTML = "<b> "+total+"</b>";
+        	document.getElementById("totalprice").value = ""+total;
+        }
+    }
+</script>
+
+<section class="gallery-container section_padding_bottom section_padding_tp5 border_btm1">
+    <form action="order" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <div class="section_title align_middle">
+                        <img alt="section pattern" src="/../img/components/section_pattern.png">
+                            <h2>
+                                ORDER
+                            </h2>
+                            <p>
+                                Check your order details below
+                                <br>
+                                </br>
+                            </p>
+                        </img>
+                    </div>
+                    <!--/.section_title-->
+                </div>
+                <!--/.col-xs-12-->
+            </div>
+            <br>
+                <br>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="cart_table_outer_area">
+                                <div class="cart_table_inner_area" class="orderrow">
+                                    <ul>
+                                        <li class="cart_heading">
+                                            <ul class="middle_row">
+                                                <li>
+                                                </li>
+                                                <li>
+                                                    <div class="cart_category_title align_middle">
+                                                        <h5 class="cart_text">
+                                                            Product
+                                                        </h5>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="cart_category_title align_middle">
+                                                        <h5 class="cart_text">
+                                                            Price
+                                                        </h5>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="cart_category_title align_middle">
+                                                        <h5 class="cart_text">
+                                                            Quantity
+                                                        </h5>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <% if(data.length){     
+			                     for(var i = 0;i < data.length;i++) { %>
+                                        <li class="color4">
+                                            <ul class="middle_row">
+                                                <li>
+                                                    <div class="cart_product_image">
+                                                        <img alt="cart food" src="/../uploads/<%=data[i].RESTUARANT_MENU_ID%>">
+                                                        </img>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="cart_category_title align_middle">
+                                                        <h5 class="cart_text">
+                                                            <%=data[i].MENU_NAME%>
+                                                        </h5>
+                                                        <input name="menuname" type="hidden" value="<%=data[i].MENU_NAME%>">
+                                                            <input name="menu" type="hidden" value="<%=data[i].RESTUARANT_MENU_ID%>">
+                                                            </input>
+                                                        </input>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="cart_category_title align_middle">
+                                                        <h5 class="cart_text">
+                                                            <%=data[i].PRICE%>
+                                                        </h5>
+                                                        <input class="price" id="price" type="hidden" value="<%=data[i].PRICE%>">
+                                                        <input name="status" type="hidden" value="1">
+                                                            <input id="totalprice" name="totalprice" type="hidden" value="">
+                                                            </input>
+                                                        </input>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="cart_category_title align_middle">
+                                                        <div class="product_quatity">
+                                                            <div class="product_number">
+                                                                <div class="incdec">
+                                                                <input type="hidden" name="totalquantity" id="totalquantity">
+                                                                    <input class="quantity" id="quantity" name="quantity" type="number" value="1" onclick="return calculateTotal();">
+                                                                    </input>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <% }%>
+                                        <li class="color4">
+                                            <ul class="middle_row">
+                                                <li>
+                                                    <div class="cart_product_image">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="cart_category_title align_middle">
+                                                        <h5 class="cart_text">
+                                                        <br> 
+                                                            <b>
+                                                                Total
+                                                            </b>
+                                                        </h5>
+                                                        <br>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="cart_category_title align_middle"> 
+                                                            <h5 class="totalitem" id="totalitem">
+                                                                <b>
+                                                                    0
+                                                                </b>
+                                                            </h5>
+                                                            <br>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="cart_category_title align_middle">
+                                                        <div class="product_quatity">
+                                                            <div class="product_number">
+                                                                <div class="incdec">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <script>calculateTotal();</script>
+                                        <% }%>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="set_reserve_btn_area align_middle">
+                                    <a class="labamba_default_btn color_change" href="/">
+                                        Continue Ordering
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+	<br>&nbsp;
+						<div class="row">
+				<div class="col-xs-12">
+					<div class="payment_method_box">
+						<ul>
+							<li>
+								<ul class="nested_label">
+									<li>
+										<label>
+											Payment Details
+										</label>
+									</li>
+									<li>
+										<a href="#">
+											<img src="/../img/payment_optioins/payment_img1.png" alt="payment icon">
+										</a>
+										<a href="#">
+											<img src="/../img/payment_optioins/payment_img2.png" alt="payment icon">
+										</a>
+										<a href="#">
+											<img src="/../img/payment_optioins/payment_img3.png" alt="payment icon">
+										</a>
+										<a href="#">
+											<img src="/../img/payment_optioins/payment_img4.png" alt="payment icon">
+										</a>
+									</li>
+								</ul>
+
+								<div class="single_form_field"><br> 
+									<input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number"autocomplete="cc-number" style="width: 400px" required autofocus>
+								</div>
+
+								<div class="single_form_field"><br> 
+									<input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" style="width: 200px;float: left;" required /> &nbsp; &nbsp; &nbsp; &nbsp;
+									<input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" style="width: 200px;float: left;" required/>
+								</div>
+								<div class="col-xs-12">
+                                <div class="set_reserve_btn_area align_middle">
+                                    <button class="labamba_default_btn color_change" type="submit" onclick="return getQuantity();">
+                                        Make Order
+                                    </button>
+                                </div>
+                            </div>
+                            <br> <br> <br> <br> 
+
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="row">
+                            <div class="col-xs-12">
+                                <div class="set_reserve_btn_area align_middle">
+                                    <button class="labamba_default_btn color_change" type="submit" onclick="return getQuantity();">
+                                        Make Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </br>
+            </br>
+        </div>
+    </form>
+</section>
+<%- include layouts/footer.ejs %>

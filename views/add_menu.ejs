@@ -1,0 +1,94 @@
+<%- include layouts/admin_header.ejs %>
+<%- include layouts/admin_sidebar.ejs %>
+<%- include layouts/admin_pageheader.ejs %>
+
+<div class="page-content page-thin">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-header panel-controls">
+                    <h3><i class="icon-target"></i> <strong> UPLOAD </strong>MENU</h3>
+                </div>
+                <div class="panel-content">
+                    <div class="row">
+                        <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Menu Name</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" name="menuname" type="text" placeholder="Enter menu name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">Ingredients</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" name="ingredients" type="text" placeholder="Enter Ingredients">
+                                    </div>
+                                 </div>   
+                                 <div class="form-group">
+                                    <label class="col-sm-4 control-label">Price</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" name="price" type="number" placeholder="Price" step="any">
+                                    </div>
+                                 </div> 
+                                 <div class="form-group">
+                                    <label class="col-sm-4 control-label">Menu Picture</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" name="image" type="file" onchange="readURL(this);" required>
+                                        <img id="blah" src="#" alt="menu" />
+                                    </div>
+                                 </div> 
+                                    
+                               
+                                <input type="submit" class="btn btn-primary btn-rounded">
+                                <input type="reset" value="Clear" class="btn btn-default btn-rounded">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-lg-12 portlets">
+              <div class="panel">
+                <div class="panel-header">
+                  <h3><i class="fa fa-table"></i> <strong>Sorting </strong> table</h3>
+                </div>
+                <div class="panel-content pagination2 table-responsive">
+                  <table class="table table-hover table-dynamic">
+                    <thead>
+                      <tr>
+                        <th>Menu Name</th>
+                        <th>Ingredients</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <!-- <th>Action</th> -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if(data.length){     
+                     for(var i = 0;i < data.length;i++) { %>
+                      <tr>
+                        <td><%=data[i].MENU_NAME%></td>
+                        <td><%=data[i].INGREDIENTS%></td>
+                        <td><%=data[i].PRICE%></td>
+                        <td><a href="/../uploads/<%=data[i].IMAGE%>" data-lightbox="image-1"><img src="/../uploads/<%=data[i].IMAGE%>" alt="cart food" width="50"> >></a></td>
+                        <td><a href="delete?type=menu&id=<%=data[i].RESTUARANT_MENU_ID%>" onclick="return confirm('Are you sure you want to delete this menu');" title="Delete"><i class="glyphicon glyphicon-remove-circle" style="color:red;"></i></a></td>
+                      </tr>
+                     <% }
+            
+                     }else{ %>
+                         <tr>
+                            <td colspan="3">No record</td>
+                         </tr>
+                    <% } %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+
+<%- include layouts/admin_footer.ejs %>

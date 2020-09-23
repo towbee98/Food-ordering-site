@@ -1,0 +1,58 @@
+<%- include layouts/header.ejs %>
+
+<section class="seat_researve_area section_padding">
+        <img class="parallax_img kms_parallax parallax_left" src="/../img/parallax/seat_reservation_parallax.png" data-enllax-ratio=".4" data-enllax-type="foreground" style="z-index: 9; transform: translateY(-61px);" alt="parallax image">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <div class="section_title align_middle">
+                        <img src="/../img/components/section_pattern.png" alt="section pattern">
+                        <h2>Customer Login</h2>
+                        <p>
+                            Login to your account and you start ordering from your favourite restaurants<br>
+                            <% if(invalid){ %>
+                            <b style="color:red;">Invalid Login Details</b>
+                            <% } %>
+                        </p>
+                    </div><!--/.section_title-->
+                </div><!--/.col-xs-12-->
+            </div><!--/.row-->
+            <form action="login" method="POST">
+                <div class="row">
+                <div class="col-md-4 col-sm-6"></div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="seat_researve_field">
+                            <div class="single_field">
+                                <label for="field1">Username</label>
+                                <input name="username" type="text" style="width: 223px;" required="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6"></div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="seat_researve_field">
+                            <div class="single_field">
+                                <label for="field2">Password</label>
+                                <input name="password" type="password" style="width: 223px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="set_reserve_btn_area align_middle">
+                            <button class="labamba_default_btn color_change" type="submit">
+                                Login
+                            </button><br> <br> <br> 
+                            Don't have an account?<br> <br> 
+                <a href="signup">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+<%- include layouts/footer.ejs %>

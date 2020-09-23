@@ -1,0 +1,37 @@
+eduroam-144-191:restaurant akingboladeshada$ openssl genrsa -des3 -out server.enc.key 2048
+Generating RSA private key, 2048 bit long modulus
+........+++
+.............+++
+e is 65537 (0x10001)
+Enter pass phrase for server.enc.key:
+Verifying - Enter pass phrase for server.enc.key:
+eduroam-144-191:restaurant akingboladeshada$ 
+eduroam-144-191:restaurant akingboladeshada$ openssl req -new -key server.enc.key -out server.csr
+Enter pass phrase for server.enc.key:
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:UK
+State or Province Name (full name) [Some-State]:Avon
+Locality Name (eg, city) []:Bristol
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:WebTechnologies
+Organizational Unit Name (eg, section) []:Project
+Common Name (e.g. server FQDN or YOUR name) []:CustomizedRestuarant
+Email Address []:as16247@my.bristol.ac.uk
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:gbolade
+An optional company name []:gbolade
+eduroam-144-191:restaurant akingboladeshada$ openssl rsa -in server.enc.key -out server.key
+Enter pass phrase for server.enc.key:
+writing RSA key
+eduroam-144-191:restaurant akingboladeshada$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+Signature ok
+subject=/C=UK/ST=Avon/L=Bristol/O=WebTechnologies/OU=Project/CN=CustomizedRestuarant/emailAddress=as16247@my.bristol.ac.uk
+Getting Private key
+eduroam-144-191:restaurant akingboladeshada$ 

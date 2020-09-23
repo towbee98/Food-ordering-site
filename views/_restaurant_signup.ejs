@@ -1,0 +1,136 @@
+<%- include layouts/header.ejs %>
+
+<section class="content ctn__1">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+        <h2>Create a Restaurant Account</h2>
+        
+      </div>
+      <div class="grid_8">
+        <p>Upload your menu and Track your orders <span class="color1 fw">24/7</span>. <br>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="form_block">
+  <div class="container">
+    <div class="row">
+    <!-- <div class="grid_2">
+    </div> -->
+      <div class="grid_8">
+        <form id="form" action="/restaurant/signup" method="post">
+        <div class="form_spinner">
+        <img src="images/Preloader_4.gif" alt="">
+        </div>
+        <br> <br> 
+        <label class="name">
+        <input type="text" name="first_name" placeholder="First Name" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter your First Name</span>
+        <span class="error-message">*Enter your First Name</span>
+        </label>   
+        <label class="email">
+        <input type="text" name="last_name" placeholder="Last Name" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter your Last Name</span>
+        <span class="error-message">*Enter your Last Name</span>
+        </label>
+        <div class="clear"></div>      
+        <label class="name">
+        <input type="text" name="middle_name" placeholder="Middle Name" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter your Last Name</span>
+        <span class="error-message">*Enter your Last Name</span>
+        </label>       
+        <label class="email">
+        <input type="text" name="email" placeholder="Email Address" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter your Email Address</span>
+        <span class="error-message">*Enter your Email Address</span>
+        </label>
+        <div class="clear"></div>      
+        <label class="name">
+        <input type="text" name="username" placeholder="Username" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter your username</span>
+        <span class="error-message">*Enter your username</span>
+        </label>       
+        <label class="email">
+        <input type="password" name="password" placeholder="Password" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter your password</span>
+        <span class="error-message">*Enter your password</span>
+        </label>
+        <div class="clear"></div>      
+        <label class="name">
+        <input type="text" name="restaurant_name" placeholder="Restaurant Name" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter Restaurant Name</span>
+        <span class="error-message">*Enter Restaurant Name</span>
+        </label>       
+        <label class="email">
+        <input type="text" name="restaurant_reg_no" placeholder="Restaurant Reg No" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter Restaurant Reg No</span>
+        <span class="error-message">*Enter Restaurant Reg No</span>
+        </label>
+        <div class="clear"></div>      
+        <label class="name">
+        <input type="text" name="street" placeholder="Street " value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter Street</span>
+        <span class="error-message">*Enter Street</span>
+        </label>       
+        <label class="email">
+        <input type="text" name="street_cont" placeholder="Street Cont." value=""/>
+        </label>
+        <div class="clear"></div>      
+        <label class="name">
+        <input type="text" name="lg" placeholder="Local Goverment " value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter Local Goverment</span>
+        <span class="error-message">*Enter Local Goverment</span>
+        </label>       
+        <label class="email">
+        <input type="text" name="state" placeholder="State" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter State</span>
+        <span class="error-message">*Enter State</span>
+        </label>
+        <div class="clear"></div>      
+        <label class="name">
+        <input type="text" name="country" placeholder="Country" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter Country</span>
+        <span class="error-message">*Enter Country</span>
+        </label>       
+        <label class="email">
+        <input type="text" name="post_code" placeholder="Post Code" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter Post Code</span>
+        <span class="error-message">*Enter Post Code</span>
+        </label>
+        <div class="clear"></div>      
+        <label class="name">
+        <input type="text" name="restaurant_no" placeholder="Restaurant No I" value="" data-constraints="@Required" />
+        <span class="empty-message">*Enter your Restaurant No I</span>
+        <span class="error-message">*Enter your Restaurant No I</span>
+        </label>       
+        <label class="email">
+        <input type="text" name="restaurant_no_two" placeholder="Restaurant No II" value="" data-constraints="@Required"/>
+        <span class="empty-message">*Enter your Restaurant No II</span>
+        <span class="error-message">*Enter your Restaurant No II</span>
+        </label>
+        <div class="clear"></div>      
+        <label class="name">
+        <input type="text" name="restaurant_tax_id" placeholder="Restaurant Tax ID" value="" data-constraints="@Required"/>
+        <span class="empty-message">*Enter Restaurant Tax ID</span>
+        <span class="error-message">*Enter Restaurant Tax ID</span>
+        </label>       
+        <label class="email">
+        <input type="text" name="restaurant_tax_authority" placeholder="Restaurant Tax Authority" value="" data-constraints="@Required"/>
+        <span class="empty-message">*Enter Restaurant Tax Authority</span>
+        <span class="error-message">*Enter Restaurant Tax Authority</span>
+        </label>
+        <div class="clear"></div>
+        <div class="btns">
+        <a href="#" data-type="reset" class="btn">clear</a>
+        <a href="#" data-type="submit" class="btn">create an account</a>
+        </div>
+        </form>  
+        <p>Already have an account? <span class="color1 fw"><a href="/restaurant">Login</a></span>. <br> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%- include layouts/footer.ejs %>

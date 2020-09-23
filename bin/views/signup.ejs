@@ -1,0 +1,129 @@
+<%- include layouts/header.ejs %>
+
+<section class="seat_researve_area section_padding">
+		<img class="parallax_img kms_parallax parallax_left" src="/../img/parallax/seat_reservation_parallax.png" data-enllax-ratio=".4" data-enllax-type="foreground" style="z-index: 9; transform: translateY(-61px);" alt="parallax image">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-6 col-md-offset-3">
+					<div class="section_title align_middle">
+						<img src="/../img/components/section_pattern.png" alt="section pattern">
+						<h2>Customer Registration</h2>
+						<p>
+							Create an account and you can order from your favourite restaurants
+						</p>
+					</div><!--/.section_title-->
+				</div><!--/.col-xs-12-->
+			</div><!--/.row-->
+			<form action="signup" method="POST">
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field1">Your First Name</label>
+								<input name="first_name" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field2">Your Last Name</label>
+								<input name="last_name" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field1">Email Address</label>
+								<input name="email" type="email" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field1">Username</label>
+								<input name="username" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field2">Password</label>
+								<input name="password" type="password" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field1">Phone</label>
+								<input name="phone" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field1">Street</label>
+								<input name="street" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field2">Street Cont.</label>
+								<input name="street_cont" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field3">LGA</label>
+								<input name="lga" ="field3" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field4">State</label>
+								<input name="state" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field5">Country</label>
+								<input name="country" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="seat_researve_field">
+							<div class="single_field">
+								<label for="field6">Post Code</label>
+								<input name="post_code" type="text" style="width: 223px;" required="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="set_reserve_btn_area align_middle">
+							<button class="labamba_default_btn color_change" type="submit">
+                                Create an account
+                            </button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+<%- include layouts/footer.ejs %>
